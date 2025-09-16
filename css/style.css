@@ -1,0 +1,144 @@
+:root {
+    --main-color: #FEC260;
+    --font-color: #352e28;
+}
+* , *::after , *::before{
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "PT Sans Caption", sans-serif;
+    background-color: #F7ECDE;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+body::selection {
+    background-color: var(--main-color);
+    color: var(--font-color);
+}
+
+/* Bookmark */
+.bookmark {
+    color: var(--font-color);
+    text-align: center;
+}
+.bookmark h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 50px;
+    padding: 8px 0;
+    position: relative;
+    display: inline-block;
+}
+.bookmark h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    height: 25%;
+    background-color: var(--main-color);
+    z-index: -1;
+    transition: all .5s ease-in-out;
+}
+.bookmark h1:hover::before {
+    height: 45%;
+}
+.bookmark .bookmark-form {
+    border-top: 2px dotted var(--font-color);
+    border-bottom: 2px dotted var(--font-color);
+}
+.bookmark-form h3 {
+    font-family: "Righteous", cursive;
+    background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.form-control:focus {
+    border-color: var(--main-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(250, 222, 180, 1) !important; 
+    outline: none; 
+}
+form [id="submit"] {
+    padding: 6px 48px;
+    color: #fff;
+    background-color: #d1512d;
+    border: 1px solid #d1512d;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+form [id="submit"]:hover {
+    color: #fff;
+    background-color: #a03315; 
+    border: 1px solid #a03315;
+}
+.bookmark-table table tbody tr .visit .visit-link {
+    color: #fff;
+    background-color: #9eb23b;
+    border: 1px solid #9eb23b;
+}
+.bookmark-table table tbody tr .visit .visit-link:hover {
+    background-color: #8A9E23; 
+}
+.bookmark-table table tbody tr .delete button {
+    color: #fff;
+    background-color: #eb1d36;
+    border: 1px solid #eb1d36;
+}
+.bookmark-table table tbody tr .delete button:hover {
+    background-color: #D30820; 
+}
+
+/* Modal */
+.modal {
+    font-family: "PT Sans Caption", sans-serif;
+    color: var(--font-color);
+}
+.modal .circles span {
+    width: 20px;
+    height: 20px;
+}
+.modal .modal-title {
+    font-family: "Bree Serif", serif;
+    color: var(--font-color);
+}
+li {
+    font-size: 18px;
+}
+ul li i {
+    color: #BB4120;
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+    .bookmark h1 {
+        font-size: 32px;
+    }
+    form #submit {
+        width: 100%;
+    }
+    .bookmark-table {
+        overflow-x: auto;  
+    }
+    .bookmark-table table {
+        font-size: 14px;
+    }
+    table .visit .visit-link,
+    table .edit button,
+    table .delete button {
+        width: 100%;
+        display: block;
+        font-size: 12px;
+        padding: 3px;
+    }
+    .modal-dialog {
+        margin: 0 auto;
+        max-width: 90%;  
+    }
+}

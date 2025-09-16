@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/bookmark.png" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bookmark</title>
+</head>
+<body>
+    <main class="bookmark">
+        <div class="container">
+            <h1 class="m-5">Bookmarker</h1>
+            <div class="bookmark-form p-3 p-sm-1">
+                <h3 class="p-4">
+                    <i class="fa-solid fa-bookmark"></i>
+                    Bookmark your favorite sites
+                    <i class="fa-solid fa-bookmark"></i>
+                </h3>
+                <form class="p-2">
+                    <div class="mb-4 text-start">
+                        <label for="siteName" class="form-label fw-bold">
+                            <i class="fa-solid fa-book-bookmark me-2"></i>Site Name
+                        </label>
+                        <input type="text" class="form-control" id="siteName" placeholder="Bookmark Name">
+                    </div>
+                    <div class="mb-4 text-start">
+                        <label for="siteUrl" class="form-label fw-bold">
+                            <i class="fa-solid fa-link me-2"></i>Site URL
+                        </label>
+                        <input type="text" class="form-control mb-4" id="siteUrl" placeholder="Website URL">
+                    </div>
+                    <button onclick="addBookmark()" class="btn mb-2" type="button" id="submit">Submit</button>
+                </form>
+
+                <!-- Modal -->
+                <div class="modal fade" id="errorModal" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content p-3">
+                            <div class="modal-header d-flex justify-content-between">
+                                <div class="circles d-flex align-items-center">
+                                    <span class="rounded-circle bg-danger d-inline-block me-2"></span>
+                                    <span class="rounded-circle bg-warning d-inline-block me-2"></span>
+                                    <span class="rounded-circle bg-success d-inline-block me-2"></span>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body" id="modal-body">
+                                <!-- Errors will appear here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    
+            <div class="bookmark-table pt-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Index</th>
+                            <th scope="col">Website Name</th>
+                            <th scope="col">Visit</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Data will appear here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
