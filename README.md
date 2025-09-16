@@ -27,7 +27,7 @@ JavaScript (ES6)
 
 Clone the repo: 
 
-[git clone git@github.com:HajarZain222/Bookmarker.git
+git clone git@github.com:HajarZain222/Bookmarker.git
 
 
 Open the project folder:
